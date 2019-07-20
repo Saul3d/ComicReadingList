@@ -1,0 +1,17 @@
+.marvelCharacters{
+  border:1px solid #575757;
+  border-radius:7px;
+  margin:20px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  
+.image-wrapper{
+  .characterImage{
+    width:200px;
+    height:200px;
+  }
+}
+}
