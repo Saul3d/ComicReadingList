@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Comics.scss';
+
 class Comics extends React.Component {
   render() {
     return (
