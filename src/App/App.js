@@ -10,8 +10,8 @@ import firebase from 'firebase/app';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Home from '../components/Home/Home';
-import Characters from '../components/Characters/Characters';
-import Comics from '../components/Comics/Comics';
+import CharacterShelf from '../components/CharacterShelf/CharacterShelf';
+import ComicShelf from '../components/ComicShelf/ComicShelf';
 
 import './App.scss';
 
@@ -60,13 +60,13 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <MyNavbar authed={authed} />
-            <div className='container'>
-              <div className="row">
+            <div className="container-fluid">
+              <div className="row d-flex flex-column">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>
                   <PrivateRoute path='/home' component={Home} authed={authed}/>
-                  <PrivateRoute path='/characters' component={Characters} authed={authed}/>
-                  <PrivateRoute path='/comics' component={Comics} authed={authed}/>
+                  <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
+                  <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>
