@@ -9,7 +9,7 @@ import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-import Home from '../components/Home/Home';
+import MyList from '../components/MyList/MyList';
 import CharacterShelf from '../components/CharacterShelf/CharacterShelf';
 import ComicShelf from '../components/ComicShelf/ComicShelf';
 
@@ -22,7 +22,7 @@ fbConnection();
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = props => (authed === false
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
+    : (<Redirect to={{ pathname: '/mylist', state: { from: props.location } }} />));
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
@@ -64,7 +64,7 @@ class App extends React.Component {
               <div className="row d-flex flex-column">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>
-                  <PrivateRoute path='/home' component={Home} authed={authed}/>
+                  <PrivateRoute path='/mylist' component={MyList} authed={authed}/>
                   <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
                   <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
                   <Redirect from="*" to="/auth" />
