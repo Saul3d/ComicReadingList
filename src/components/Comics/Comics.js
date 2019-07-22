@@ -11,6 +11,7 @@ class Comics extends React.Component {
         <div className="image-wrapper">
           <img src={`${issue.thumbnail.path}.${issue.thumbnail.extension}`} alt={issue.name} title={issue.name} className="comicImage" />
         </div>
+        <button className="btn btn-primary" onClick="this.props.addTolist">add to list</button>
       </div>
     ));
     return (

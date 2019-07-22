@@ -1,0 +1,26 @@
+{
+  "user1": {
+    "fName": "Saul",
+    "lName": "Solano",
+    "email": "",
+    "uid":"EGON43vTc7clXtKDql9OzDnBeLA3"
+    },
+  "user2": {
+    "fName": "Peter",
+    "lName": "Parker",
+    "email": "Peter.parker@marvel.com",
+    "uid":"1111"
+    },
+  "user3": {
+    "fName": "Tony",
+    "lName": "Stark",
+    "email": "tony.stark@marvel.com",
+    "uid":"2222"
+    },
+    "user4": {
+      "fName": "Bruce",
+      "lName": "Banner",
+      "email": "bruce.banner@marvel.com",
+      "uid":"3333"
+    }
+}
