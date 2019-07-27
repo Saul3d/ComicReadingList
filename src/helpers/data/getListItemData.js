@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 
@@ -17,18 +16,28 @@ const getComics = () => new Promise((resolve, reject) => {
     .catch();
 });
 
-const getMyListOfComics = () => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/listItem.json?listId="list1"&sortBy="comicsTitle"`)
+const getComicsInList = listId => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/listItem.json?orderBy="listId"&equalTo="${listId}"`)
     .then((res) => {
       const issues = [];
       const userComicListResults = res.data;
-      console.error('saul', userComicListResults);
       Object.keys(userComicListResults).forEach((comicsInList) => {
+        // eslint-disable-next-line no-param-reassign
+        userComicListResults[comicsInList].id = comicsInList;
         issues.push(userComicListResults[comicsInList]);
       });
+      console.error('issues', issues);
       resolve(issues);
     })
     .catch(err => reject(err));
 });
 
-export default { getComics, getMyListOfComics };
+const deleteComic = comicIssueId => axios.delete(`${firebaseUrl}/listItem/${comicIssueId}.json`);
+const updateListItem = (comicIssueId, issue) => axios.put(`${firebaseUrl}/listItem/${comicIssueId}.json`, issue);
+
+export default {
+  getComics,
+  getComicsInList,
+  deleteComic,
+  updateListItem,
+};

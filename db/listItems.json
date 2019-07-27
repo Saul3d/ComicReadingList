@@ -1,37 +1,82 @@
 {
   "listItem1":{
-    "id":71054,
+    "comicApiId":71054,
     "comicTitle":"Avengers (2018) #21",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/5/d0/5d1bc3444426b.jpg",
-    "listId":"list1",
-    "currentIssue":false
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/e/03/5d12761805e98.jpg",
+    "listId":"list2",
+    "currentIssue":false,
+    "isRead":true
   },
   "listItem2":{
-    "id":17574,
-    "comicTitle":"Avengers (2018) #21",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/b0/4bb86524bed68.jpg",
+    "comicApiId":17574,
+    "comicTitle":"X-Men (2018) #17",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/6/70/5cc206835f4e4.jpg",
     "listId":"list1",
-    "currentIssue":false
+    "currentIssue":false,
+    "isRead":true
   },
   "listItem3":{
-    "id":21917,
+    "comicApiId":21917,
     "comicTitle":"X-Men (2004) #206 (VARIANT)",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/90/4c36126c7c9ed.jpg",
-    "listId":"list1",
-    "currentIssue":false
+    "listId":"list2",
+    "currentIssue":false,
+    "isRead":true
   },
   "listItem4":{
-    "id":5632,
+    "comicApiId":5632,
     "comicTitle":"X-Men (2004) #194",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/1/f0/4bb88aeded0c0.jpg",
-    "listId":"list1",
-    "currentIssue":true
+    "listId":"list2",
+    "currentIssue":true,
+    "isRead":true
   },
   "listItem5":{
-    "id":3137,
+    "comicApiId":3137,
     "comicTitle":"X-Men (2004) #180",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/b/c0/4d250e4f27aab.jpg",
     "listId":"list2",
-    "currentIssue":false
+    "currentIssue":false,
+    "isRead":false
+  },
+  "listItem6":{
+    "comicApiId":3137,
+    "comicTitle":"X-Men (2019) #21",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/f/70/5d126efd32eef.jpg",
+    "listId":"list1",
+    "currentIssue":false,
+    "isRead":false
+  },
+  "listItem7":{
+    "comicApiId":3137,
+    "comicTitle":"X-Men (2018) #22",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/50/5d25eefa22735.jpg",
+    "listId":"list1",
+    "currentIssue":false,
+    "isRead":false
+  },
+  "listItem8":{
+    "comicApiId":3137,
+    "comicTitle":"X-Men (2018) #20",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/5/e0/5d0130d85c91b.jpg",
+    "listId":"list1",
+    "currentIssue":false,
+    "isRead":false
+  },
+  "listItem9":{
+    "comicApiId":3137,
+    "comicTitle":"X-Men (2018) #19",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/7/90/5cf18859c77e5.jpg",
+    "listId":"list1",
+    "currentIssue":false,
+    "isRead":false
+  },
+  "listItem10":{
+    "comicApiId":3137,
+    "comicTitle":"X-Men (2018) #18",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/4/40/5cd4498085f65.jpg",
+    "listId":"list1",
+    "currentIssue":false,
+    "isRead":false
   }
 }
