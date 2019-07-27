@@ -1,10 +1,12 @@
 {
   "list1": {
   "id":"list1",
+  "name": "Excelsior",
   "uid": "EGON43vTc7clXtKDql9OzDnBeLA3"
   },
   "list2": {
     "id":"list2",
-    "uid": "1111"
+    "name": "Amazing",
+    "uid": "EGON43vTc7clXtKDql9OzDnBeLA3"
   }
 }

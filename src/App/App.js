@@ -9,9 +9,10 @@ import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-import MyList from '../components/MyList/MyList';
+import Home from '../components/Home/Home';
 import CharacterShelf from '../components/CharacterShelf/CharacterShelf';
 import ComicShelf from '../components/ComicShelf/ComicShelf';
+import getListData from '../helpers/data/getListData';
 
 import './App.scss';
 
@@ -22,7 +23,7 @@ fbConnection();
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = props => (authed === false
     ? (<Component {...props} />)
-    : (<Redirect to={{ pathname: '/mylist', state: { from: props.location } }} />));
+    : (<Redirect to={{ pathname: '/home', state: { from: props.location } }} />));
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
@@ -36,6 +37,13 @@ const PrivateRoute = ({ component: Component, authed, ...rest }) => {
 class App extends React.Component {
   state = {
     authed: false,
+    lists: [],
+  }
+
+  getMyComicLists = () => {
+    getListData.getListByListId()
+      .then(lists => this.setState({ lists }))
+      .catch(err => console.error('Could not get your comic list', err));
   }
 
   componentDidMount() {
@@ -46,6 +54,7 @@ class App extends React.Component {
         this.setState({ authed: false });
       }
     });
+    // this.getMyComicLists();  t
   }
 
   componentWillUnmount() {
@@ -53,20 +62,22 @@ class App extends React.Component {
   }
 
   render() {
-    const { authed } = this.state;
+    const { authed, lists } = this.state;
 
     return (
       <div className="App">
         <BrowserRouter>
           <React.Fragment>
-            <MyNavbar authed={authed} />
+            <MyNavbar authed={authed} lists={lists} />
             <div className="container-fluid">
               <div className="row d-flex flex-column">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>
-                  <PrivateRoute path='/mylist' component={MyList} authed={authed}/>
+                  <PrivateRoute path='/home' component={() => (<Home lists={lists}/>)} authed={authed}/>
                   <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
                   <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
+                  <PrivateRoute path='/Amazing' component={Home} authed={authed}/>
+                  <PrivateRoute path='/Excelsior' component={Home} authed={authed}/>
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>

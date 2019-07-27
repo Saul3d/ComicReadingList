@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getComicsData from '../../helpers/data/getComicsData';
+import getListItems from '../../helpers/data/getListItemData';
 import Comics from '../Comics/Comics';
 
 import './ComicShelf.scss';
@@ -11,7 +11,7 @@ class ComicShelf extends React.Component {
   }
 
   getMyData = () => {
-    getComicsData.getComics()
+    getListItems.getComics()
       .then(comics => this.setState({ comics }))
       .catch(err => console.error('Could not get staff', err));
   }
