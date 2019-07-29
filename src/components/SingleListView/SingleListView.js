@@ -1,9 +1,9 @@
 import React from 'react';
 import QueuedSection from '../QueuedSection/QueuedSection';
 import ReadSection from '../ReadSection/ReadSection';
-import './ListSingleView.scss';
+import './SingleListView.scss';
 
-class ListSingleView extends React.Component {
+class SingleListView extends React.Component {
   render() {
     const { issues, deleteListItem } = this.props;
     return (
@@ -16,12 +16,11 @@ class ListSingleView extends React.Component {
           updateList={this.props.updateList}
         />
         </div>
-        <div className="ReadList-wrapper">
+        <div className="readList-wrapper">
           <h4>Read</h4>
             <ReadSection
             issues={issues}
             deleteListItem={deleteListItem}
-            updateList={this.props.updateList}
           />
         </div>
         </div>
@@ -29,4 +28,4 @@ class ListSingleView extends React.Component {
   }
 }
 
-export default ListSingleView;
+export default SingleListView;

@@ -44,7 +44,7 @@ const getMyComicsFromFB = () => new Promise((resolve, reject) => {
         allComicsFromFirebase[allComics].id = allComics;
         allIssues.push(allComicsFromFirebase[allComics]);
       });
-      console.error('allIssues', allIssues);
+      // console.error('allIssues', allIssues);
       resolve(allIssues);
     })
     .catch(err => reject(err));

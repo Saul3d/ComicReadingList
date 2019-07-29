@@ -1,12 +1,12 @@
 {
   "list1": {
   "id":"list1",
-  "name": "Excelsior",
+  "name": "Avengers",
   "uid": "EGON43vTc7clXtKDql9OzDnBeLA3"
   },
   "list2": {
     "id":"list2",
-    "name": "Amazing",
+    "name": "X-Men",
     "uid": "EGON43vTc7clXtKDql9OzDnBeLA3"
   }
 }

@@ -6,7 +6,7 @@ import Lists from '../Lists/Lists';
 // import ListSingleView from '../ListSingleView/ListSingleView';
 
 
-import './Home.scss';
+import './MyLists.scss';
 
 class Home extends React.Component {
   state={
@@ -46,27 +46,40 @@ class Home extends React.Component {
       .catch(err => console.error('Could not get lists', err));
   }
 
+  getMyComicLists = () => {
+    getListData.getLists()
+      .then((lists) => {
+        console.error('hi', lists);
+        this.setState({ lists });
+      })
+      .catch(err => console.error('Could not get your comic list', err));
+  }
+
   componentDidMount() {
     // Hard coded list1 so that onload somthing is displayed
     // this.getMyComicListData('list1');
     this.getAllComicsFromFirebase();
-  }
-
-  componentDidUpdate() {
+    this.getMyComicLists();
   }
 
   render() {
     const { issues, lists } = this.state;
-
-    return (
-      <React.Fragment>
-        <Lists className="myLists"
+    const comicsLists = lists.map(list => (
+      <Lists
+        key={list.id}
+        name={list.name}
+        id={list.id}
         issues={issues}
-        lists={lists}
         deleteListItem={this.deleteListItem}
         updateList={this.updateList}
         />
-      </React.Fragment>
+    ));
+    return (
+      <React.Fragment>
+        <div className="listContainer">
+          { comicsLists }
+        </div>
+     </React.Fragment>
     );
   }
 }

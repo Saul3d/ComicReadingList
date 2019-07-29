@@ -20,7 +20,7 @@ class QueuedList extends React.Component {
     ));
 
     return (
-      <div className="d-flex flex-wrap justify-content-center">
+      <div className="d-flex flex-wrap justify-content-start">
       {makeComicQueuedList}
       </div>
     );
