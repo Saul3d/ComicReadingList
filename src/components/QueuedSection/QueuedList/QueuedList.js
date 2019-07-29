@@ -18,7 +18,7 @@ class QueuedList extends React.Component {
             />
         : null
     ));
-
+    console.error('saul', issues);
     return (
       <div className="d-flex flex-wrap justify-content-start">
       {makeComicQueuedList}

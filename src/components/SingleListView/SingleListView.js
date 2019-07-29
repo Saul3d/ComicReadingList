@@ -5,22 +5,21 @@ import './SingleListView.scss';
 
 class SingleListView extends React.Component {
   render() {
-    const { issues, deleteListItem } = this.props;
     return (
       <div className="list-wrapper">
         <div className="queuedList-wrapper">
         <h4>Queue</h4>
           <QueuedSection
-          issues={issues}
-          deleteListItem={deleteListItem}
-          updateList={this.props.updateList}
+          issues={this.props.location.state.issues}
+          deleteListItem={this.props.location.state.deleteListItem}
+          updateList={this.props.location.state.updateList}
         />
         </div>
         <div className="readList-wrapper">
           <h4>Read</h4>
             <ReadSection
-            issues={issues}
-            deleteListItem={deleteListItem}
+            issues={this.props.location.state.issues}
+            deleteListItem={this.props.location.state.deleteListItem}
           />
         </div>
         </div>

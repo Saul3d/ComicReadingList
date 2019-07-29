@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter,
+  HashRouter,
   Redirect,
   Route,
   Switch,
@@ -67,7 +68,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <BrowserRouter>
+        <HashRouter>
           <React.Fragment>
             <MyNavbar authed={authed} lists={lists} />
             <div className="container-fluid">
@@ -77,13 +78,13 @@ class App extends React.Component {
                   <PrivateRoute path='/home' component={() => (<MyLists lists={lists}/>)} authed={authed}/>
                   <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
                   <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
-                  <PrivateRoute path='list/:id' component={SingleListView} authed={authed}/>
+                  <PrivateRoute path='/list' component={SingleListView} authed={authed}/>
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>
             </div>
           </React.Fragment>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }

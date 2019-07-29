@@ -73,7 +73,7 @@ class MyNavbar extends React.Component {
               <NavLink tag={RRNavLink} to='/comics'>Comics</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to='/home'>getMyComicLists</NavLink>
+              <NavLink tag={RRNavLink} to='/MyLists'>MyLists</NavLink>
             </NavItem>
             {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret tag={RRNavLink} to='/home'>

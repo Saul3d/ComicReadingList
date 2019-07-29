@@ -5,10 +5,6 @@ import getListItemData from '../../helpers/data/getListItemData';
 import './Lists.scss';
 
 class Lists extends React.Component {
-  state = {
-    issues: [],
-  }
-
   render() {
     const {
       issues,
@@ -17,20 +13,22 @@ class Lists extends React.Component {
       deleteListItem,
       updateList,
     } = this.props;
-
     return (
       <React.Fragment>
-        <div className="marvelComics col-2 d-flex flex-column" to="SingleListView">
-          <div className="test">{name}</div>
-          <div>{id}</div>
-          <button className="btn btn-danger">Delete</button>
-        </div>
-
-      <SingleListView
-        issues={issues}
-        deleteListItem={deleteListItem}
-        updateList={updateList}
-      />
+        <Link className="marvelComics col-2 d-flex flex-column" to={{
+          pathname: '/list',
+          state: {
+            id,
+            name,
+            issues,
+            deleteListItem,
+            updateList,
+          },
+        }} >
+            <div className="test">{name}</div>
+            <div>{id}</div>
+            <button className="btn btn-danger">Delete</button>
+        </Link>
       </React.Fragment>
     );
   }
