@@ -9,10 +9,11 @@ import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-import Home from '../components/Home/Home';
+import MyLists from '../components/MyLists/MyLists';
 import CharacterShelf from '../components/CharacterShelf/CharacterShelf';
 import ComicShelf from '../components/ComicShelf/ComicShelf';
 import getListData from '../helpers/data/getListData';
+import SingleListView from '../components/SingleListView/SingleListView';
 
 import './App.scss';
 
@@ -73,11 +74,10 @@ class App extends React.Component {
               <div className="row d-flex flex-column">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>
-                  <PrivateRoute path='/home' component={() => (<Home lists={lists}/>)} authed={authed}/>
+                  <PrivateRoute path='/home' component={() => (<MyLists lists={lists}/>)} authed={authed}/>
                   <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
                   <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
-                  <PrivateRoute path='/Amazing' component={Home} authed={authed}/>
-                  <PrivateRoute path='/Excelsior' component={Home} authed={authed}/>
+                  <PrivateRoute path='list/:id' component={SingleListView} authed={authed}/>
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>

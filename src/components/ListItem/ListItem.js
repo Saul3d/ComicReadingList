@@ -17,7 +17,7 @@ class ListItem extends React.Component {
   }
 
   render() {
-    const { issue, updateList, read } = this.props;
+    const { issue, read } = this.props;
     return (
       <div className="marvelComics col-2 d-flex flex-column">
        <h6>{issue.comicTitle}</h6>

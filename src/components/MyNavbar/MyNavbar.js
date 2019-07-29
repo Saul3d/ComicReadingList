@@ -8,10 +8,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from 'reactstrap';
 
 import firebase from 'firebase/app';
@@ -30,22 +26,22 @@ class MyNavbar extends React.Component {
     lists: [],
   }
 
-  getMyComicLists = () => {
-    getListData.getLists()
-      .then((lists) => {
-        console.error('hi', lists);
-        this.setState({ lists });
-      })
-      .catch(err => console.error('Could not get your comic list', err));
-  }
+  // getMyComicLists = () => {
+  //   getListData.getLists()
+  //     .then((lists) => {
+  //       console.error('hi', lists);
+  //       this.setState({ lists });
+  //     })
+  //     .catch(err => console.error('Could not get your comic list', err));
+  // }
 
   componentDidMount() {
-    this.getMyComicLists();
+    // this.getMyComicLists();
   }
 
-  saySomething = (listId) => {
-    console.error(`hello ${listId}`);
-  }
+  // saySomething = (listId) => {
+  //   console.error(`hello ${listId}`);
+  // }
 
   toggle() {
     this.setState({ isOpen: !this.state.isOpen });
@@ -59,11 +55,11 @@ class MyNavbar extends React.Component {
   render() {
     const { authed } = this.props;
     // eslint-disable-next-line max-len
-    const allList = this.state.lists.map(list => <DropdownItem key={list.id} >
-      <NavItem tag={RRNavLink} to={list.name} >
-        <ListLink saySomething={this.saySomething.bind(this, list.id)}>{list.name}</ListLink>
-      </NavItem>
-    </DropdownItem>);
+    // const allList = this.state.lists.map(list => <DropdownItem key={list.id} >
+    //   <NavItem tag={RRNavLink} to={list.name} >
+    //     <ListLink saySomething={this.saySomething.bind(this, list.id)}>{list.name}</ListLink>
+    //   </NavItem>
+    // </DropdownItem>);
 
 
     const buildNavbar = () => {
@@ -76,17 +72,17 @@ class MyNavbar extends React.Component {
             <NavItem>
               <NavLink tag={RRNavLink} to='/comics'>Comics</NavLink>
             </NavItem>
-            {/* <NavItem>
-              <NavLink tag={RRNavLink} to='/home'>MyList</NavLink>
-            </NavItem> */}
-            <UncontrolledDropdown nav inNavbar>
+            <NavItem>
+              <NavLink tag={RRNavLink} to='/home'>getMyComicLists</NavLink>
+            </NavItem>
+            {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret tag={RRNavLink} to='/home'>
                   Home
                 </DropdownToggle>
                 <DropdownMenu right>
                   {allList}
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             <NavItem>
               <NavLink onClick={this.logMeOut}>Logout</NavLink>
             </NavItem>
@@ -98,7 +94,7 @@ class MyNavbar extends React.Component {
     return (
       <div className="MyNavbar">
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Excelsior Reading</NavbarBrand>
+        <NavbarBrand href="/">Excelsior Reading App</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           {buildNavbar()}
