@@ -26,7 +26,6 @@ const getComicsInList = listId => new Promise((resolve, reject) => {
         userComicListResults[comicsInList].id = comicsInList;
         issues.push(userComicListResults[comicsInList]);
       });
-      console.error('issues', issues);
       resolve(issues);
     })
     .catch(err => reject(err));

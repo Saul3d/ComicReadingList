@@ -1,10 +1,31 @@
 import React from 'react';
 import { NavLink as RRNavLink, Link } from 'react-router-dom';
-import SingleListView from '../SingleListView/SingleListView';
-import getListItemData from '../../helpers/data/getListItemData';
+import getListItemData from '../../helpers/data/getListData';
+
 import './Lists.scss';
 
 class Lists extends React.Component {
+  state = {
+    issues: [],
+  }
+
+  editThisMotha = () => {
+    console.error('editing this list');
+  }
+
+  deleteThisMotha = () => {
+    console.error('deleting this list');
+  }
+
+  getMyComicListData = (listId) => {
+    getListItemData.getComicsInList(listId)
+      .then(issues => this.setState({ issues }))
+      .catch(err => console.error('Could not get your comic list', err));
+  }
+
+  componentDidMount() {
+  }
+
   render() {
     const {
       issues,
@@ -13,11 +34,12 @@ class Lists extends React.Component {
       deleteListItem,
       updateList,
     } = this.props;
+
     return (
-      <React.Fragment>
-        <Link className="marvelComics col-2 d-flex flex-column" to={{
-          pathname: '/list',
-          state: {
+      <div className="list-wrapper">
+        <Link className="marvelComicsLists d-flex flex-column" to={{
+          pathname: `/list/${id}`,
+          params: {
             id,
             name,
             issues,
@@ -26,10 +48,12 @@ class Lists extends React.Component {
           },
         }} >
             <div className="test">{name}</div>
-            <div>{id}</div>
-            <button className="btn btn-danger">Delete</button>
         </Link>
-      </React.Fragment>
+        <div className="button-wrapper">
+          <button className="btn btn-danger" onClick={this.deleteThisMotha}>Delete</button>
+          <button className="btn btn-secondary" onClick={this.editThisMotha}>Edit</button>
+        </div>
+      </div>
     );
   }
 }
