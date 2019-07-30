@@ -41,12 +41,6 @@ class App extends React.Component {
     lists: [],
   }
 
-  getMyComicLists = () => {
-    getListData.getListByListId()
-      .then(lists => this.setState({ lists }))
-      .catch(err => console.error('Could not get your comic list', err));
-  }
-
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -77,7 +71,7 @@ class App extends React.Component {
                   <PrivateRoute path='/home' component={() => (<MyLists lists={lists}/>)} authed={authed}/>
                   <PrivateRoute path='/characters' component={CharacterShelf} authed={authed}/>
                   <PrivateRoute path='/comics' component={ComicShelf} authed={authed}/>
-                  <PrivateRoute path='list/:id' component={SingleListView} authed={authed}/>
+                  <PrivateRoute path='/list/:id' component={SingleListView} authed={authed}/>
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>

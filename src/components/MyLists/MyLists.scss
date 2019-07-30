@@ -1,4 +1,40 @@
 .listContainer{
   display:flex;
   flex-wrap:wrap;
+
+
+.addComic{
+  display:flex;
+  &:hover{
+      cursor:pointer;
+      .card{
+          background-color:#f1f1f1;
+          .plus-wrapper{
+              background-color:rgb(127, 211, 2);
+          }
+      } 
+  }
+  .addButton{ 
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      border:1px solid rgba(0,0,0,.125);
+      flex-direction:column;
+      // width:300px;
+      padding:40px;
+      color:#707070;
+      .plus-wrapper{
+          display:flex;
+          justify-content: center;
+          align-items:center;
+          color:#fff;
+          background-color:grey;
+          width: 50px;
+          height:50px;
+          border-radius:50px;
+          margin:10px 0;
+          padding:0 !important;
+      }
+  }
+}
 }

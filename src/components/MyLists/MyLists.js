@@ -3,15 +3,27 @@ import React from 'react';
 import getListItemData from '../../helpers/data/getListItemData';
 import getListData from '../../helpers/data/getListData';
 import Lists from '../Lists/Lists';
-// import ListSingleView from '../ListSingleView/ListSingleView';
-
+import NewList from '../NewList/NewList';
 
 import './MyLists.scss';
 
-class Home extends React.Component {
+const defaultList = {
+  name: '',
+};
+
+class MyList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
   state={
     issues: [],
     lists: [],
+    showModal: false,
+    newList: defaultList,
+    isEditing: false,
+    isOpen: false,
   }
 
   getMyComicListData = (listId) => {
@@ -20,68 +32,78 @@ class Home extends React.Component {
       .catch(err => console.error('Could not get your comic list', err));
   }
 
-  updateListItemData = (listid) => {
-    getListItemData.getUpdateofListItems(listid)
-      .then(issues => this.setState({ issues }))
-      .catch(err => console.error('Could not update your comic list', err));
-  }
-
-  deleteListItem = (issueId) => {
-    // console.error(issueId);
-    getListItemData.deleteComic(issueId)
-      .then(() => this.getAllComicsFromFirebase())
-      .catch(err => console.error('Could not delete', err));
-    // console.error('remove this comic from the list');
-  };
-
-  updateList = (issueId, issue) => {
-    getListItemData.updateListItem(issueId, issue)
-      .then(() => this.getAllComicsFromFirebase())
-      .catch(err => console.error('Could update', err));
-  };
-
-  getAllComicsFromFirebase = () => {
-    getListData.getMyComicsFromFB()
-      .then(issues => this.setState({ issues }))
-      .catch(err => console.error('Could not get lists', err));
-  }
-
   getMyComicLists = () => {
     getListData.getLists()
       .then((lists) => {
-        console.error('hi', lists);
         this.setState({ lists });
       })
       .catch(err => console.error('Could not get your comic list', err));
   }
 
+  displayModal = () => {
+    // console.error('this is working');
+    this.setState({ newlist: defaultList });
+    this.toggleModal();
+  }
+
+  toggleModal() {
+    this.setState(prevState => ({
+      showModal: !prevState.showModal,
+    }));
+  }
+
+  closeModal() {
+    console.error(this);
+    this.setState({ isEditing: false });
+    this.toggleModal();
+  }
+
   componentDidMount() {
-    // Hard coded list1 so that onload somthing is displayed
+    // Hard coded list1 so that onload something is displayed
     // this.getMyComicListData('list1');
-    this.getAllComicsFromFirebase();
+    // this.getAllComicsFromFirebase();
     this.getMyComicLists();
   }
 
   render() {
-    const { issues, lists } = this.state;
+    const { lists } = this.state;
+    const { userIssues, updateList, deleteListItem } = this.props;
     const comicsLists = lists.map(list => (
       <Lists
         key={list.id}
         name={list.name}
         id={list.id}
-        issues={issues}
-        deleteListItem={this.deleteListItem}
-        updateList={this.updateList}
+        issues={userIssues}
+        deleteListItem={deleteListItem}
+        updateList={updateList}
+        getMyComicListData={this.getMyComicListData}
         />
     ));
     return (
       <React.Fragment>
         <div className="listContainer">
           { comicsLists }
+          <span className="addComic" onClick={this.displayModal}>
+          <div className="addButton">
+            <div className="plus-wrapper">
+              <h1>+</h1>
+            </div>
+            <h4>Add Walk</h4>
+          </div>
+        </span>
         </div>
+
+        <NewList
+          lists={lists}
+          isOpen={this.state.showModal}
+          closeModal={this.closeModal}
+          formSubmit={this.formSubmit}
+          editFormSubmit={this.editFormSubmit}
+          isEditing={this.state.isEditing}
+        />
      </React.Fragment>
     );
   }
 }
 
-export default Home;
+export default MyList;
