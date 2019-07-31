@@ -1,4 +1,6 @@
 import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 import getListItemData from '../../helpers/data/getListItemData';
 import getListData from '../../helpers/data/getListData';
@@ -41,7 +43,6 @@ class MyList extends React.Component {
   }
 
   displayModal = () => {
-    // console.error('this is working');
     this.setState({ newlist: defaultList });
     this.toggleModal();
   }
@@ -58,6 +59,42 @@ class MyList extends React.Component {
     this.toggleModal();
   }
 
+
+  editList = (listObject) => {
+    console.error(listObject);
+    this.setState({ editingList: listObject, showModal: true, isEditing: true });
+  };
+
+  addFormSubmit = (addList) => {
+    const addListCopy = { ...addList };
+    addListCopy.uid = firebase.auth().currentUser.uid;
+    getListData.createList(addListCopy)
+      .then(() => {
+        this.closeModal();
+        this.getMyComicLists();
+      })
+      .catch(err => console.error('unable to edit', err));
+  }
+
+  editFormSubmit = (editedList, id) => {
+    const editedListCopy = { ...editedList };
+    editedListCopy.uid = firebase.auth().currentUser.uid;
+    getListData.editFormSubmit(editedListCopy, id)
+      .then(() => {
+        this.closeModal();
+        this.getMyComicLists();
+      })
+      .catch(err => console.error('unable to edit', err));
+  }
+
+  deleteFormSubmit = (id) => {
+    getListData.deleteList(id)
+      .then(() => {
+        this.getMyComicLists();
+      })
+      .catch(err => console.error('unable to delete', err));
+  }
+
   componentDidMount() {
     // Hard coded list1 so that onload something is displayed
     // this.getMyComicListData('list1');
@@ -71,12 +108,13 @@ class MyList extends React.Component {
     const comicsLists = lists.map(list => (
       <Lists
         key={list.id}
-        name={list.name}
-        id={list.id}
+        listObject={list}
         issues={userIssues}
         deleteListItem={deleteListItem}
         updateList={updateList}
         getMyComicListData={this.getMyComicListData}
+        editList = {this.editList}
+        deleteFormSubmit={this.deleteFormSubmit}
         />
     ));
     return (
@@ -97,9 +135,10 @@ class MyList extends React.Component {
           lists={lists}
           isOpen={this.state.showModal}
           closeModal={this.closeModal}
-          formSubmit={this.formSubmit}
           editFormSubmit={this.editFormSubmit}
           isEditing={this.state.isEditing}
+          listObject={this.state.editingList}
+          addFormSubmit={this.addFormSubmit}
         />
      </React.Fragment>
     );

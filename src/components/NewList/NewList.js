@@ -25,6 +25,18 @@ class NewList extends React.Component {
     this.setState({ newList: tempList });
   }
 
+  putForm = (e) => {
+    const { listObject } = this.props;
+    e.preventDefault();
+    this.props.editFormSubmit(this.state.newList, listObject.id);
+  };
+
+  createList = (e) => {
+    const { newList } = this.state;
+    e.preventDefault();
+    this.props.addFormSubmit(newList);
+  }
+
   render() {
     const { newList } = this.state;
 
@@ -33,7 +45,7 @@ class NewList extends React.Component {
         <Modal isOpen={this.props.isOpen} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Create New List</ModalHeader>
           <ModalBody>
-          <form onSubmit={this.props.formSubmit}>
+          <form>
             <div className="form-group">
               <input
                 className="form-control"
@@ -47,8 +59,8 @@ class NewList extends React.Component {
           </ModalBody>
           <ModalFooter>
             {this.props.isEditing
-              ? <Button color="primary" onClick={this.props.editFormSubmit}>Edit</Button>
-              : <Button color="primary" onClick={this.props.formSubmit}>Create</Button>}
+              ? <Button color="primary" onClick={this.putForm}>Save</Button>
+              : <Button color="primary" onClick={this.createList}>Create</Button>}
             <Button color="secondary" onClick={this.props.closeModal}>Cancel</Button>
           </ModalFooter>
         </Modal>

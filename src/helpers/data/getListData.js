@@ -50,4 +50,15 @@ const getMyComicsFromFB = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getLists, getListByListId, getMyComicsFromFB };
+const editFormSubmit = (newList, id) => axios.put(`${firebaseUrl}/list/${id}.json`, newList);
+const deleteList = id => axios.delete(`${firebaseUrl}/list/${id}.json`);
+const createList = addList => axios.post(`${firebaseUrl}/list.json`, addList);
+
+export default {
+  getLists,
+  getListByListId,
+  getMyComicsFromFB,
+  editFormSubmit,
+  deleteList,
+  createList,
+};

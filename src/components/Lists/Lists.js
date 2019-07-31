@@ -9,12 +9,15 @@ class Lists extends React.Component {
     issues: [],
   }
 
-  editThisMotha = () => {
-    console.error('editing this list');
-  }
+  editMe = (e) => {
+    e.preventDefault();
+    const { listObject, editList } = this.props;
+    editList(listObject);
+  };
 
   deleteThisMotha = () => {
-    console.error('deleting this list');
+    const { listObject, deleteFormSubmit } = this.props;
+    deleteFormSubmit(listObject.id);
   }
 
   getMyComicListData = (listId) => {
@@ -29,29 +32,27 @@ class Lists extends React.Component {
   render() {
     const {
       issues,
-      name,
-      id,
       deleteListItem,
       updateList,
+      listObject,
     } = this.props;
 
     return (
       <div className="list-wrapper">
         <Link className="marvelComicsLists d-flex flex-column" to={{
-          pathname: `/list/${id}`,
+          pathname: `/list/${listObject.id}`,
           params: {
-            id,
-            name,
+            listObject,
             issues,
             deleteListItem,
             updateList,
           },
         }} >
-            <div className="test">{name}</div>
+            <div className="test">{listObject.name}</div>
         </Link>
         <div className="button-wrapper">
           <button className="btn btn-danger" onClick={this.deleteThisMotha}>Delete</button>
-          <button className="btn btn-secondary" onClick={this.editThisMotha}>Edit</button>
+          <button className="btn btn-secondary" onClick={this.editMe}>Edit</button>
         </div>
       </div>
     );
