@@ -10,7 +10,7 @@ class SingleListView extends React.Component {
   }
 
   getIssues = () => {
-    const listId = this.props.location.params.id;
+    const listId = this.props.location.params.listObject.id;
     getListItemData.getComicsInList(listId)
       .then(issues => this.setState({ issues }))
       .catch(err => console.error('err in getComicsInList', err));
