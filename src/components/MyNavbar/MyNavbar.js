@@ -14,8 +14,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 // import getComicsData from '../../helpers/data/getListItemData';
-import getListData from '../../helpers/data/getListData';
-import ListLink from './ListLink/ListLink';
+// import getListData from '../../helpers/data/getListData';
+// import ListLink from './ListLink/ListLink';
 
 
 import './MyNavbar.scss';
