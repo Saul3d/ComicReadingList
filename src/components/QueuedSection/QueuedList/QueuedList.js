@@ -7,16 +7,13 @@ class QueuedList extends React.Component {
   render() {
     const { issues, deleteListItem, updateList } = this.props;
     const makeComicQueuedList = issues.map(comicIssue => (
-      comicIssue.isRead !== true
-      // eslint-disable-next-line max-len
-        ? <ListItem
+        <ListItem
             key={comicIssue.id}
             issue={comicIssue}
             deleteListItem={deleteListItem}
             isRead={comicIssue.isRead}
             updateList={updateList}
             />
-        : null
     ));
     return (
       <div className="d-flex flex-wrap justify-content-start">
