@@ -4,9 +4,9 @@ import './Comics.scss';
 
 class Comics extends React.Component {
   render() {
-    const { issues } = this.props;
+    const { issues, list } = this.props;
     const makeComicCards = issues.map(issue => (
-      <ComicCard issue={issue} />
+      <ComicCard key={issues.id} issue={issue} list={list} />
     ));
     return (
       <div className="d-flex flex-wrap justify-content-center">

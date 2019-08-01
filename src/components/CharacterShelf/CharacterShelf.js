@@ -25,7 +25,7 @@ class CharacterShelf extends React.Component {
     return (
       <React.Fragment>
         <h1>Marvel Characters</h1>
-        <Characters hero={characters} />
+        <Characters key={characters.id} hero={characters} />
       </React.Fragment>
     );
   }
