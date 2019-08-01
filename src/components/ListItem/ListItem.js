@@ -11,9 +11,10 @@ class ListItem extends React.Component {
 
   updateComic = (e) => {
     const { issue, updateList } = this.props;
-    issue.isRead = !issue.isRead;
+    const newIssue = { ...issue };
+    newIssue.isRead = !issue.isRead;
     e.preventDefault();
-    updateList(issue.id, issue);
+    updateList(issue.id, newIssue);
   }
 
   render() {

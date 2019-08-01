@@ -39,7 +39,7 @@ class SingleListView extends React.Component {
         <div className="queuedList-wrapper">
         <h4>Queue</h4>
           <QueuedSection
-          issues={issues}
+          issues={issues.filter(x => !x.isRead)}
           deleteListItem={this.deleteListItem}
           updateList={this.updateList}
         />
@@ -47,7 +47,7 @@ class SingleListView extends React.Component {
         <div className="readList-wrapper">
           <h4>Read</h4>
             <ReadSection
-            issues={issues}
+            issues={issues.filter(x => x.isRead)}
             deleteListItem={this.deleteListItem}
           />
         </div>
