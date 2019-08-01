@@ -64,7 +64,7 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <MyNavbar authed={authed} lists={lists} />
-            <div className="container-fluid">
+            <div className="container-fluid main-container">
               <div className="row d-flex flex-column">
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed}/>

@@ -1,4 +1,11 @@
 .dropdown-toggle.nav-link{
   display: flex;
   align-items: center;
+
+}
+
+.MyNavbar{
+  position:fixed;
+  width:100%;
+  z-index:10;
 }

@@ -42,7 +42,7 @@ class ComicCard extends React.Component {
       currentIssue: 'false',
       image: `${issue.thumbnail.path}.${issue.thumbnail.extension}`,
       isRead: 'false',
-      ListId: listId,
+      listId,
     };
     this.setState({ issue: issueCopy });
     getListData.addComicToList(issueCopy);
