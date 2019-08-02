@@ -13,7 +13,6 @@ class ReadList extends React.Component {
             issue={comicIssue}
             deleteListItem={deleteListItem}
             updateList={updateList}
-            read={comicIssue.isRead}
           />
     ));
     return (
