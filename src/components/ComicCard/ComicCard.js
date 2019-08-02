@@ -14,7 +14,7 @@ const defaultComicCard = {
   comicTitle: '',
   currentIssue: '',
   image: '',
-  isRead: '',
+  isRead: false,
   listId: '',
 };
 
@@ -41,7 +41,7 @@ class ComicCard extends React.Component {
       comicTitle: issue.title,
       currentIssue: 'false',
       image: `${issue.thumbnail.path}.${issue.thumbnail.extension}`,
-      isRead: 'false',
+      isRead: false,
       listId,
     };
     this.setState({ issue: issueCopy });

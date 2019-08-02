@@ -18,7 +18,7 @@ class ListItem extends React.Component {
   }
 
   render() {
-    const { issue, read } = this.props;
+    const { issue } = this.props;
     return (
       <div className="marvelComics col-2 d-flex flex-column">
        <h6>{issue.comicTitle}</h6>
@@ -27,8 +27,10 @@ class ListItem extends React.Component {
        </div>
        <div className="button-wrapper">
         <button className="deleteComic btn btn-danger" onClick={this.removeComic}>Remove</button>
-        { read !== true
-          ? <button className="read btn btn-primary" onClick={this.updateComic}>Read</button>
+        { issue.isRead !== true
+          ? <React.Fragment>
+              <button className="read btn btn-primary" onClick={this.updateComic}>Read</button>
+          </React.Fragment>
           : null
         }
        </div>
