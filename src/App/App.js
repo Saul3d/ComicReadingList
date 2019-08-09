@@ -12,7 +12,6 @@ import MyNavbar from '../components/MyNavbar/MyNavbar';
 import MyLists from '../components/MyLists/MyLists';
 import CharacterShelf from '../components/CharacterShelf/CharacterShelf';
 import ComicShelf from '../components/ComicShelf/ComicShelf';
-import getListData from '../helpers/data/getListData';
 import SingleListView from '../components/SingleListView/SingleListView';
 
 import './App.scss';

@@ -126,7 +126,7 @@ class MyList extends React.Component {
             <div className="plus-wrapper">
               <h1>+</h1>
             </div>
-            <h4>Add Walk</h4>
+            <h4>Add List</h4>
           </div>
         </span>
         </div>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
-
+// this function gets all comics from the marvel api
 const getComics = () => new Promise((resolve, reject) => {
   axios.get(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${apiKeys.marvelApiKeys}&limit=20&orderBy=title`)
     .then((res) => {
@@ -15,7 +15,7 @@ const getComics = () => new Promise((resolve, reject) => {
     })
     .catch();
 });
-
+// this function gets comics in a specific list with an id
 const getComicsInList = listId => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/listItem.json?orderBy="listId"&equalTo="${listId}"`)
     .then((res) => {

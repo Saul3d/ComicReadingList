@@ -16,6 +16,7 @@ const defaultComicCard = {
   image: '',
   isRead: false,
   listId: '',
+  description: '',
 };
 
 class ComicCard extends React.Component {
@@ -35,7 +36,7 @@ class ComicCard extends React.Component {
     }));
   }
 
-  mofoWork = (listId, issue) => {
+  saveNewComicToFirebase = (listId, issue) => {
     const issueCopy = {
       comicApiId: issue.id,
       comicTitle: issue.title,
@@ -43,6 +44,7 @@ class ComicCard extends React.Component {
       image: `${issue.thumbnail.path}.${issue.thumbnail.extension}`,
       isRead: false,
       listId,
+      description: `${issue.description}`,
     };
     this.setState({ issue: issueCopy });
     getListData.addComicToList(issueCopy);
@@ -52,7 +54,7 @@ class ComicCard extends React.Component {
   render() {
     const { issue, list } = this.props;
     const myLists = list.map(l => (
-    <DropdownItem onClick={this.mofoWork.bind(this, l.id, issue)}>{l.name}</DropdownItem>
+    <DropdownItem onClick={this.saveNewComicToFirebase.bind(this, l.id, issue)}>{l.name}</DropdownItem>
     ));
     return (
       <div className="marvelComics col-2 d-flex flex-column">
