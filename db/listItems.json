@@ -1,19 +1,21 @@
 {
   "listItem1":{
-    "comicApiId":71054,
+    "comicApiId":77202,
     "comicTitle":"Avengers (2018) #22",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/6/60/5d386e2e0352e.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description":null
   },
   "listItem2":{
-    "comicApiId":17574,
+    "comicApiId":77201,
     "comicTitle":"Avengers (2018) #21",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/5/d0/5d1bc3444426b.jpg",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/1/a0/5d1b80bde2dbb.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description":null
   },
   "listItem3":{
     "comicApiId":21917,
@@ -21,7 +23,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/3/c0/5d08f258d7307.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description":null
   },
   "listItem4":{
     "comicApiId":5632,
@@ -29,7 +32,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/e/d0/5cd9cc05ce11b.jpg",
     "listId":"list1",
     "currentIssue":true,
-    "isRead":true
+    "isRead":true,
+    "description": "WAR OF THE REALMS TIE-IN! Avengers Mountain is under siege as the last stronghold of Earth’s heroes is the subject of an all-out assault by the forces of Malekith!"
   },
   "listItem5":{
     "comicApiId":3137,
@@ -37,7 +41,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/c0/5cb89e117d65c.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":"WAR OF THE REALMS TIE-IN! See the greatest heroes of Washington, D.C., in action as the War of the Realms comes to the nation’s capital. Who needs the Avengers when you’ve got the all-new Squadron Supreme of America? But who are these mysterious new heroes, and where did they come from? Only Agent Coulson knows."
   },
   "listItem6":{
     "comicApiId":3137,
@@ -45,7 +50,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/d/80/5c88146024059.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":"A NEW VAMPIRE ORDER! The final fate of Dracula! The Avengers vs. Ghost Rider?! Blade vs. the Shadow Colonel! And the world of the Marvel U vampires will be changed forever. Who will be the new Lord of the Damned?"
   },
   "listItem7":{
     "comicApiId":3137,
@@ -53,7 +59,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/7/00/5c76f88a3640f.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description": null
   },
   "listItem8":{
     "comicApiId":3137,
@@ -61,7 +68,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/4/10/5c6493635d73f.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description": null
   },
   "listItem9":{
     "comicApiId":3137,
@@ -69,7 +77,8 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/c/20/5c523c34cebc8.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description": null
   },
   "listItem10":{
     "comicApiId":3137,
@@ -77,47 +86,53 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/30/5c3f94de0b801.jpg",
     "listId":"list1",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description": null
   },
   "listItem11":{
-    "comicApiId":71054,
+    "comicApiId":73043,
     "comicTitle":"X-men (2018) #21",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/e/03/5d12761805e98.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description": null
   },
   "listItem12":{
-    "comicApiId":17574,
-    "comicTitle":"X-Men (2018) #17",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/6/70/5cc206835f4e4.jpg",
+    "comicApiId":60862,
+    "comicTitle":"Uncanny X-Men (2016) #17",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/d0/586ebf8b4183b.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description":"The X-MEN have waged war on the INHUMANS! But as the X-Men fight for their future, one X-Man fights for her humanity. Driven mad by the influence of her vampiric brother, M desperately tries to stop herself from feeding on the marrow of her enemies…and her friends! Will she succeed? Or will she add to the body count?"
   },
   "listItem13":{
-    "comicApiId":21917,
-    "comicTitle":"X-Men (2004) #206 (VARIANT)",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/90/4c36126c7c9ed.jpg",
+    "comicApiId":52943,
+    "comicTitle":"X-Men (2015) #26",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/c/30/553e9ad73acc1.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":true
+    "isRead":true,
+    "description":"The conclusion of MS. MARVEL creator G. Willow Wilson's first X-Men tale, \"THE BURNING WORLD\"! Investigating mysterious natural phenomena in the Blackrock Desert, the X-Men have discovered something monstrous that has ties to their own past. Reliving history, can the X-Men find a way to win the day this time around or are they doomed to make the same painful mistakes?"
   },
   "listItem14":{
-    "comicApiId":5632,
-    "comicTitle":"X-Men (2004) #194",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/1/f0/4bb88aeded0c0.jpg",
+    "comicApiId":52942,
+    "comicTitle":"X-Men (2013) #25",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/a/20/54f5fa46e926f.jpg",
     "listId":"list2",
     "currentIssue":true,
-    "isRead":true
+    "isRead":true,
+    "description":"As natural phenomena tear the Black Rock Desert apart-with Storm stuck deep in the Earth at the epicenter-the X-Men race to find answers and save their teammate! And while some of the team follow a lead that takes them to the Inhuman Queen MEDUSA, Psylocke makes an EXPLOSIVE discovery of her own..."
   },
   "listItem15":{
-    "comicApiId":3137,
-    "comicTitle":"X-Men (2004) #180",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/b/c0/4d250e4f27aab.jpg",
+    "comicApiId":52941,
+    "comicTitle":"X-Men (2013) #24",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/3/80/54d0e712382f8.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":"Trapped deep underground in the sinkhole that mysteriously appeared in the middle of the Black Rock Desert, STORM battles her claustrophobia while trying to find answers. Meanwhile, her teammates above ground discover that the phenomenon has ties to old enemies..."
   },
   "listItem16":{
     "comicApiId":3137,
@@ -125,38 +140,43 @@
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/f/70/5d126efd32eef.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":""
   },
   "listItem17":{
-    "comicApiId":3137,
-    "comicTitle":"X-Men (2018) #22",
+    "comicApiId":73044,
+    "comicTitle":"Uncanny X-Men (2018) #22",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/50/5d25eefa22735.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":""
   },
   "listItem18":{
-    "comicApiId":3137,
-    "comicTitle":"X-Men (2018) #20",
+    "comicApiId":73042,
+    "comicTitle":"Uncanny X-Men (2018) #20",
     "image":"http://i.annihil.us/u/prod/marvel/i/mg/5/e0/5d0130d85c91b.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description": null
   },
   "listItem19":{
-    "comicApiId":3137,
-    "comicTitle":"X-Men (2018) #19",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/7/90/5cf18859c77e5.jpg",
+    "comicApiId":60864,
+    "comicTitle":"Uncanny X-Men (2016) #19",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/c/90/58c1c843ad6ee.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":"When she left the ranks of his X-Men team, PSYLOCKE promised that if MAGNETO stepped out of line, she would end him. And now, in light of the events of INHUMANS VS. X-MEN, Psylocke is going to make good on that promise!"
   },
   "listItem20":{
     "comicApiId":3137,
-    "comicTitle":"X-Men (2018) #18",
-    "image":"http://i.annihil.us/u/prod/marvel/i/mg/4/40/5cd4498085f65.jpg",
+    "comicTitle":"Uncanny X-Men (2016) #18",
+    "image":"http://i.annihil.us/u/prod/marvel/i/mg/9/b0/589decb557b03.jpg",
     "listId":"list2",
     "currentIssue":false,
-    "isRead":false
+    "isRead":false,
+    "description":"AN INHUMANS vs. X-MEN TIE-IN! OCCUPY NEW ATTILAN! With the mutant invasion of the Inhuman capital city now complete, MAGNETO seeks to lock it down by deploying his newly-acquired army of mutant sleepers. But will he take his mission a step too far?"
   }
 }

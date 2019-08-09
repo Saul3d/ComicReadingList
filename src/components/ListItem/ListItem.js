@@ -1,8 +1,27 @@
 import React from 'react';
+import {
+  Popover,
+  PopoverHeader,
+  PopoverBody,
+} from 'reactstrap';
 
 import './ListItem.scss';
 
 class ListItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      popoverOpen: false,
+    };
+  }
+
+  toggle() {
+    this.setState({
+      popoverOpen: !this.state.popoverOpen,
+    });
+  }
+
   removeComic = (e) => {
     e.preventDefault();
     const { deleteListItem, issue } = this.props;
@@ -22,8 +41,12 @@ class ListItem extends React.Component {
     return (
       <div className="marvelComics col-2 d-flex flex-column">
        <h6>{issue.comicTitle}</h6>
-       <div className="image-wrapper">
-       <img src={issue.image} alt={issue.comicTitle} title={issue.comicTitle} className="comicImage"/>
+       <div className="image-wrapper" id={`Popover-${issue.id}`}>
+        <Popover placement="bottom" isOpen={this.state.popoverOpen} target={`Popover-${issue.id}`} toggle={this.toggle}>
+          <PopoverHeader>Popover Title</PopoverHeader>
+          <PopoverBody>{issue.description}</PopoverBody>
+        </Popover>
+        <img src={issue.image} alt={issue.comicTitle} title={issue.comicTitle} className="comicImage"/>
        </div>
        <div className="button-wrapper">
         <button className="deleteComic btn btn-danger" onClick={this.removeComic}>Remove</button>
