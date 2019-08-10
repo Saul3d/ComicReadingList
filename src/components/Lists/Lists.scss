@@ -1,28 +1,47 @@
+@import '../../styles/variables';
 
 .list-wrapper{
   display:flex;
   flex-direction:column;
+  align-items: center;
+  justify-content: center;
   border:1px solid #aaaaaa;
   border-radius:5px;
   margin:10px;
-  padding:20px;
+  padding:15px 0;
+  width:230px;
+  height:130px;
   justify-content: space-between;
+  background-color:$color1;
+  border: 1px solid $color2;
+  box-shadow: 3px 3px 6px $color4;
+  outline:none;
 
   .marvelComicsLists{
-  
-    width:175px;
-    font-size:1.25em;
+    font-family: "Marvel", Impact, "San-serif";
+    font-size:2.1875em;
+    letter-spacing: 1px;
     font-weight:bold;
+    text-transform: uppercase;
     text-decoration: none !important;
-    padding:20px;
-    margin-bottom:3px;
     border-radius:5px;
+    color:#fff;
   }
   .button-wrapper{
     display:flex;
     justify-content:space-around;
+    position:relative;
+    top:-6px;
+    
     button{
-      width:85px !important;
+      width:58px !important;
+      // height:26px;
+      background-color:$color3 !important;
+      border:none;
+      margin:0 2px;
+      font-size:12px;
+      outline:none !important;
+      box-shadow:none;
     }
   }
   
