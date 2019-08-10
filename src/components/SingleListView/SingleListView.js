@@ -35,20 +35,22 @@ class SingleListView extends React.Component {
   render() {
     const { issues } = this.state;
     return (
-      <div className="list-wrapper">
+      <div className="comics-wrapper">
         <div className="queuedList-wrapper">
-        <h4>Queue</h4>
+        <h2>Unread</h2>
           <QueuedSection
           issues={issues.filter(x => !x.isRead)}
           deleteListItem={this.deleteListItem}
           updateList={this.updateList}
+          className="queuedSection-wrapper"
         />
         </div>
         <div className="readList-wrapper">
-          <h4>Read</h4>
+          <h2>Read</h2>
             <ReadSection
             issues={issues.filter(x => x.isRead)}
             deleteListItem={this.deleteListItem}
+            className="readSection-wrapper"
           />
         </div>
         </div>

@@ -14,6 +14,9 @@ code {
 }
 
 html{
-  background: url('../assets/images/avengers-wallpaper.jpg') no-repeat;
+  background: url('../assets/images/marvelBg.png') no-repeat;
   background-size: cover;
+  background-position:center;
+  height:100%;
+  background-attachment: fixed;
 }

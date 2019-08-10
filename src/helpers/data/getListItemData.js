@@ -3,8 +3,8 @@ import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 // this function gets all comics from the marvel api
-const getComics = () => new Promise((resolve, reject) => {
-  axios.get(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${apiKeys.marvelApiKeys}&limit=20&orderBy=title`)
+const getComics = (limit, offset, dateRange) => new Promise((resolve, reject) => {
+  axios.get(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=${apiKeys.marvelApiKeys}&limit=${limit}&orderBy=title&offset=${offset}&dateRange=${dateRange}`)
     .then((res) => {
       const comics = [];
       const allData = res.data.data.results;

@@ -6,7 +6,7 @@ class Comics extends React.Component {
   render() {
     const { issues, list } = this.props;
     const makeComicCards = issues.map(issue => (
-      <ComicCard key={issues.id} issue={issue} list={list} />
+      <ComicCard key={issue.id} issue={issue} list={list} />
     ));
     return (
       <div className="d-flex flex-wrap justify-content-center">

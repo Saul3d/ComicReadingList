@@ -1,0 +1,17 @@
+.comics-wrapper{
+    padding:20px;
+}
+
+.queuedList-wrapper, .readList-wrapper{
+    h2{
+        text-transform: uppercase;
+        font-family: 'Marvel', Impact, helvetica, 'san-serif';
+        text-align:left;
+        color:#fff;
+        
+    }
+    margin-bottom:20px;
+    .queuedSection-wrapper, .readSection-wrapper{
+        min-height:100px;
+    }
+}

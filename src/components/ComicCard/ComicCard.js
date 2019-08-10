@@ -54,7 +54,8 @@ class ComicCard extends React.Component {
   render() {
     const { issue, list } = this.props;
     const myLists = list.map(l => (
-    <DropdownItem onClick={this.saveNewComicToFirebase.bind(this, l.id, issue)}>{l.name}</DropdownItem>
+    // eslint-disable-next-line max-len
+    <DropdownItem key={l.id} onClick={this.saveNewComicToFirebase.bind(this, l.id, issue)}>{l.name}</DropdownItem>
     ));
     return (
       <div className="marvelComics col-2 d-flex flex-column">

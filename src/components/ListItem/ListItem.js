@@ -39,11 +39,11 @@ class ListItem extends React.Component {
   render() {
     const { issue } = this.props;
     return (
-      <div className="marvelComics col-2 d-flex flex-column">
-       <h6>{issue.comicTitle}</h6>
+      <div className="marvelComicsBooks d-flex flex-column">
+       {/* <h6>{issue.comicTitle}</h6> */}
        <div className="image-wrapper" id={`Popover-${issue.id}`}>
         <Popover placement="bottom" isOpen={this.state.popoverOpen} target={`Popover-${issue.id}`} toggle={this.toggle}>
-          <PopoverHeader>Popover Title</PopoverHeader>
+          <PopoverHeader>{issue.comicTitle}</PopoverHeader>
           <PopoverBody>{issue.description}</PopoverBody>
         </Popover>
         <img src={issue.image} alt={issue.comicTitle} title={issue.comicTitle} className="comicImage"/>
