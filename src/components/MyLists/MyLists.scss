@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .listContainer{
   display:flex;
   flex-wrap:wrap;
@@ -9,9 +11,6 @@
       cursor:pointer;
       .card{
           background-color:#f1f1f1;
-          .plus-wrapper{
-              background-color:rgb(127, 211, 2);
-          }
       } 
   }
   .addButton{ 
@@ -21,20 +20,31 @@
       border:1px solid rgba(0,0,0,.125);
       flex-direction:column;
       // width:300px;
-      padding:40px;
-      color:#707070;
+      padding:0 20px;
+      margin: 20px;
+      color:$color1;
+    //   background-color:rgba(0,0,0,.75);
       .plus-wrapper{
           display:flex;
           justify-content: center;
           align-items:center;
-          color:#fff;
-          background-color:grey;
+          color:#f9f9f9;
+          background-color:$color1;
           width: 50px;
           height:50px;
           border-radius:50px;
           margin:10px 0;
           padding:0 !important;
       }
+    }
   }
-}
+  .addButton{
+      &:hover{
+          color:$color5;
+          background-color:rgba(0,0,0,.5);
+          .plus-wrapper{
+              background-color:$color5;
+          }
+      }
+  }
 }

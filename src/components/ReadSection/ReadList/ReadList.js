@@ -16,7 +16,7 @@ class ReadList extends React.Component {
           />
     ));
     return (
-      <div className="d-flex flex-wrap justify-content-start readSection-wrapper">
+      <div className="d-flex flex-wrap justify-content-center readSection-wrapper">
         {makeComicReadList}
       </div>
     );

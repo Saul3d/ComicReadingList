@@ -35,21 +35,6 @@ const getListByListId = listId => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-// const getMyComicsFromFB = () => new Promise((resolve, reject) => {
-//   axios.get(`${firebaseUrl}/listItem.json?`)
-//     .then((res) => {
-//       const allIssues = [];
-//       const allComicsFromFirebase = res.data;
-//       Object.keys(allComicsFromFirebase).forEach((allComics) => {
-//         allComicsFromFirebase[allComics].id = allComics;
-//         allIssues.push(allComicsFromFirebase[allComics]);
-//       });
-//       // console.error('allIssues', allIssues);
-//       resolve(allIssues);
-//     })
-//     .catch(err => reject(err));
-// });
-
 const editFormSubmit = (newList, id) => axios.put(`${firebaseUrl}/list/${id}.json`, newList);
 const deleteList = id => axios.delete(`${firebaseUrl}/list/${id}.json`);
 const createList = addList => axios.post(`${firebaseUrl}/list.json`, addList);
@@ -58,7 +43,6 @@ const addComicToList = issue => axios.post(`${firebaseUrl}/listItem.json`, issue
 export default {
   getLists,
   getListByListId,
-  // getMyComicsFromFB,
   editFormSubmit,
   deleteList,
   createList,

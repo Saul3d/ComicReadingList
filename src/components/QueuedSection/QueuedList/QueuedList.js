@@ -16,7 +16,7 @@ class QueuedList extends React.Component {
             />
     ));
     return (
-      <div className="d-flex flex-wrap justify-content-start queuedSection-wrapper">
+      <div className="d-flex flex-wrap justify-content-center queuedSection-wrapper">
       {makeComicQueuedList}
       </div>
     );

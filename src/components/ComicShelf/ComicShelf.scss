@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+.shelf{
+  padding:20px;
+  h2{
+    text-transform: uppercase;
+    font-family: 'Marvel', Impact, helvetica, 'san-serif';
+    text-align:left;
+    color:#fff;
+  }
+}
+.comicsFromMarvel-wrapper{
+  background-color: rgba(0, 0, 0, .3);
+  border:1px dashed $color5;
+  border-radius:7px;
+  padding:20px;
+}

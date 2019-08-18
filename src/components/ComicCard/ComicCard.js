@@ -4,6 +4,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  UncontrolledPopover,
+  PopoverHeader,
+  PopoverBody,
 } from 'reactstrap';
 import getListData from '../../helpers/data/getListData';
 
@@ -24,9 +27,12 @@ class ComicCard extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.toggle2 = this.toggle2.bind(this);
+
     this.state = {
       dropdownOpen: false,
       issue: defaultComicCard,
+      popoverOpen: false,
     };
   }
 
@@ -34,6 +40,12 @@ class ComicCard extends React.Component {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen,
     }));
+  }
+
+  toggle2() {
+    this.setState({
+      popoverOpen: !this.state.popoverOpen,
+    });
   }
 
   saveNewComicToFirebase = (listId, issue) => {
@@ -57,10 +69,15 @@ class ComicCard extends React.Component {
     // eslint-disable-next-line max-len
     <DropdownItem key={l.id} onClick={this.saveNewComicToFirebase.bind(this, l.id, issue)}>{l.name}</DropdownItem>
     ));
+
     return (
-      <div className="marvelComics col-2 d-flex flex-column">
-        <h5>{issue.title}</h5>
-        <div className="image-wrapper">
+      <div className="marvelComics d-flex flex-column">
+        {/* <h5>{issue.title}</h5> */}
+        <div className="image-wrapper" id={`Popover-${issue.id}`}>
+        <UncontrolledPopover placement="bottom" isOpen={this.state.popoverOpen} target={`Popover-${issue.id}`} toggle={this.toggle2}>
+          <PopoverHeader>{issue.title}</PopoverHeader>
+          <PopoverBody>{issue.description}</PopoverBody>
+        </UncontrolledPopover>
           <img src={`${issue.thumbnail.path}.${issue.thumbnail.extension}`} alt={issue.name} title={issue.name} className="comicImage" />
         </div>
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} className="listSelectDropdown">
