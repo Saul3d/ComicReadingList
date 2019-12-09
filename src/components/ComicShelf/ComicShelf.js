@@ -10,7 +10,7 @@ class ComicShelf extends React.Component {
   state={
     limit: 20,
     offset: 0,
-    dateRange: '2000-01-01,2019-08-01',
+    dateRange: '1990-01-01,2019-08-01',
     comics: [],
     list: [],
   }
@@ -32,9 +32,10 @@ class ComicShelf extends React.Component {
     ) {
       this.setState({
         offset: this.state.offset + 20,
-        limit: this.state.limit + 20,
+        // limit: this.state.limit + 20,
       }, this.appendComics());
-      console.error('limit: ', this.state.limit);
+      console.error('limit-saul: ', this.state.limit);
+      console.error('offset-saul: ', this.state.offset);
     }
   }
 
@@ -44,17 +45,10 @@ class ComicShelf extends React.Component {
   }
 
   appendComics = () => {
-    const {
-      comics,
-      limit,
-      offset,
-      dateRange,
-    } = this.state;
-
-    console.error('offset: ', offset);
-    getListItems.getComics(limit, offset, dateRange)
-      .then((newComics) => { this.setState({ comics: [...comics, ...newComics] }); });
-    console.error(comics);
+    console.error('offset: ', this.state.offset);
+    getListItems.getComics(this.state.limit, this.state.offset, this.state.dateRange)
+      .then(loadedComics => this.setState({ comics: [...this.state.comics, ...loadedComics] }));
+    console.error(this.state.comics);
   }
 
   render() {
